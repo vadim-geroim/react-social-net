@@ -1,4 +1,4 @@
-import logo from './Samurai-Logo.png';
+import logo from './logo.png';
 import style from './Header.module.css';
 
 export const Header = () => {

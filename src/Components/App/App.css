@@ -12,15 +12,14 @@ body {
 
 .app-wrapper {
   display: grid;
-  grid-template-columns: 15vw 85vw;
-  grid-template-rows: 10vh 90vh;
+  grid-template-columns: 125px 100%;
+  grid-template-rows: 100px 100%;
   grid-template-areas:
     "header header"
     "nav main";
 }
 
 .main {
-  padding: 10px;
-  background-color: lightblue;
   grid-area: main;
+  padding-left: 15px;
 }

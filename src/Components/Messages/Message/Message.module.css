@@ -1,6 +1,12 @@
 /*Message component*/
 .message {
+  margin-top: 20px;
+  display: flex;
 }
 
 .text {
+}
+
+.message img {
+  margin-right: 10px;
 }
