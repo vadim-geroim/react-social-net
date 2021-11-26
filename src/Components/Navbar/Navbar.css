@@ -1,0 +1,20 @@
+/*Nav component*/
+.nav {
+  padding: 10px;
+  background-color: lightskyblue;
+  display: flex;
+  flex-direction: column;
+  grid-area: nav;
+}
+
+.nav-link {
+  padding: 10px 0;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link:hover {
+  font-weight: 600;
+  font-size: 18px;
+}

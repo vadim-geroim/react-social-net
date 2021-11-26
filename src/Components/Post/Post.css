@@ -1,0 +1,33 @@
+/*Posts Component*/
+.posts {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
+.post-field {
+  margin-top: 20px;
+  height: 10vh;
+  background-color: lightgrey;
+}
+
+.post-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  width: 100px;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  background-color: lightseagreen;
+}
+
+.post-btn:hover {
+  background-color: darkcyan;
+  text-decoration: none;
+}

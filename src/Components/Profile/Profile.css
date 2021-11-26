@@ -1,0 +1,17 @@
+/*Profile component*/
+.profile {
+  margin-top: 20px;
+  display: flex;
+}
+
+.ava-wrapper {
+  margin-right: 10px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  justify-content: space-between;
+  font-size: 14px;
+}
