@@ -4,14 +4,29 @@
   display: flex;
 }
 
-.ava-wrapper {
+.ava {
   margin-right: 10px;
 }
 
-.profile-info {
+.info {
   display: flex;
   flex-direction: column;
   height: 30vh;
   justify-content: space-between;
   font-size: 14px;
+}
+
+.name {
+}
+
+.bod {
+}
+
+.city {
+}
+
+.degree {
+}
+
+.site {
 }

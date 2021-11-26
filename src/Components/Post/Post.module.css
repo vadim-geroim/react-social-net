@@ -6,13 +6,17 @@
   width: 60vw;
 }
 
-.post-field {
+.title {
+  font-size: 20px;
+}
+
+.field {
   margin-top: 20px;
   height: 10vh;
   background-color: lightgrey;
 }
 
-.post-btn {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +31,7 @@
   background-color: lightseagreen;
 }
 
-.post-btn:hover {
+.btn:hover {
   background-color: darkcyan;
   text-decoration: none;
 }

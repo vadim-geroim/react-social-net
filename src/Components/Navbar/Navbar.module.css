@@ -7,14 +7,14 @@
   grid-area: nav;
 }
 
-.nav-link {
+.link {
   padding: 10px 0;
   font-size: 16px;
   text-decoration: none;
   color: black;
 }
 
-.nav-link:hover {
+.link:hover {
   font-weight: 600;
   font-size: 18px;
 }

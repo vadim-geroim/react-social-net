@@ -1,11 +1,12 @@
-import './Message.css';
+import style from './Message.module.css';
+
 
 export const Message = () => {
     return (
-        <div className="messages">
-            <div className="message-wrapper">
+        <div >
+            <div className={style.message}>
                 <img src="#" alt="Message icon" />
-                <p className="message">Hello world</p>
+                <p className={style.text}>Hello world</p>
             </div>
         </div>
     );

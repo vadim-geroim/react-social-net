@@ -1,10 +1,10 @@
 import logo from './Samurai-Logo.png';
-import './Header.css';
+import style from './Header.module.css';
 
 export const Header = () => {
     return (
         <>
-            <header className="header">
+            <header className={style.header}>
                 <a href="#">
                     <img src={logo} alt="Logo" />
                 </a>
