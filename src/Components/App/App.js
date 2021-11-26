@@ -3,7 +3,7 @@ import { Header } from '../Header/Header';
 import { Navbar } from '../Navbar/Navbar';
 import { Profile } from '../Profile/Profile';
 import { Post } from '../Post/Post';
-import { Message } from '../Message/Message';
+import { Messages } from '../Messages/Messages';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </div>
         <Profile />
         <Post />
-        <Message />
+        <Messages />
       </main>
     </div>
   );
