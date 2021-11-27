@@ -4,8 +4,8 @@ import { Message } from './Message/Message';
 export const Messages = () => {
     return (
         <div className={style.message}>
-            <Message />
-            <Message />
+            <Message text="Hello! How are you?" />
+            <Message text="Hi! I'm fine." />
         </div>
     );
 }

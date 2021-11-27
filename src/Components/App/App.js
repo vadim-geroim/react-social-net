@@ -4,6 +4,7 @@ import { Navbar } from '../Navbar/Navbar';
 import { Profile } from '../Profile/Profile';
 import { Post } from '../Post/Post';
 import { Messages } from '../Messages/Messages';
+import { Dialogs } from '../Dialogs/Dialogs';
 
 function App() {
   return (
@@ -11,12 +12,10 @@ function App() {
       <Header />
       <Navbar />
       <main className="main">
-        <div className="main-hero">
-          <img src="https://picsum.photos/id/103/1050/100" alt="Main photo" />
-        </div>
-        <Profile />
+        {/* <Messages />
         <Post />
-        <Messages />
+        <Profile /> */}
+        <Dialogs />
       </main>
     </div>
   );

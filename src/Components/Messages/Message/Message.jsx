@@ -2,13 +2,13 @@ import style from './Message.module.css';
 import icon from './message-icon.png';
 
 
-export const Message = () => {
+export const Message = (props) => {
     return (
-        <div >
+        <>
             <div className={style.message}>
                 <img src={icon} alt="Message icon" />
-                <p className={style.text}>Hello world</p>
+                <p className={style.text}>{props.text}</p>
             </div>
-        </div>
+        </>
     );
 }
