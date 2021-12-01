@@ -1,0 +1,12 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 200px;
+}
+
+.dialog {
+  font-size: 18px;
+}
+
+.active {
+  color: grey;
+}

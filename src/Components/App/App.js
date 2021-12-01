@@ -18,7 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/dialogs" element={<Dialogs />} />
+          <Route path="/messages" element={<Messages />} />
+          <Route path="/dialogs/*" element={<Dialogs />} />
         </Routes>
       </main>
     </div>
