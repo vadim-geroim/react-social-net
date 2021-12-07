@@ -18,18 +18,31 @@ const Message = (props) => {
 }
 
 export const Dialogs = () => {
+    const dialogData = [
+        { id: 1, name: "Super User" },
+        { id: 2, name: "User 2" },
+        { id: 3, name: "User 3" },
+        { id: 4, name: "User 4" },
+    ]
+
+    const messagesData = [
+        { id: 1, data: "Hello world." },
+        { id: 2, data: "What is going on? " },
+        { id: 3, data: "I'm so happy to see you!" }
+    ]
+
     return (
         <div className={style.wrapper}>
             <div className={style.dialogs}>
-                <Dialog id={1} userName="User 1" />
-                <Dialog id={2} userName="User 2" />
-                <Dialog id={3} userName="User 3" />
-                <Dialog id={4} userName="User 4" />
+                <Dialog id={dialogData[0].id} userName={dialogData[0].name} />
+                <Dialog id={dialogData[1].id} userName={dialogData[1].name} />
+                <Dialog id={dialogData[2].id} userName={dialogData[2].name} />
+                <Dialog id={dialogData[3].id} userName={dialogData[3].name} />
             </div>
             <div className={style.messages}>
-                <Message messageText="Hello world!" />
-                <Message messageText="The world is great!" />
-                <Message messageText="What a beautiful day!!!" />
+                <Message messageText={messagesData[0].data} />
+                <Message messageText={messagesData[1].data} />
+                <Message messageText={messagesData[2].data} />
             </div>
         </div >
     );
