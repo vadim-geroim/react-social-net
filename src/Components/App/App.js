@@ -3,7 +3,7 @@ import { Header } from '../Header/Header';
 import { Navbar } from '../Navbar/Navbar';
 import { Home } from '../Home/Home';
 import { Profile } from '../Profile/Profile';
-import { Post } from '../Post/Post';
+import { Posts } from '../Post/Posts';
 import { Messages } from '../Messages/Messages';
 import { Dialogs } from '../Dialogs/Dialogs';
 import { Message } from '../Messages/Message/Message';
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/messages" element={<Messages />} />
+          <Route path="/posts" element={<Posts />} />
           <Route path="/dialogs/*" element={<Dialogs />} />
         </Routes>
       </main>
