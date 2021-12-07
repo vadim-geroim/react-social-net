@@ -1,10 +1,10 @@
 import { Post } from "./Post";
 import { Messages } from "../Messages/Messages";
 
-export const Posts = () => {
+export const Posts = (props) => {
     return (
         <div>
-            <Messages />
+            <Messages postMessages={props.postMessages} />
             <Post />
         </div>
     );
