@@ -1,33 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './Components/App/App';
+import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-
-const postMessages = [
-  { id: 1, data: "Hello my friend!" },
-  { id: 2, data: "What's going on?" },
-  { id: 3, data: "How was your trip to Europe? " }
-]
-
-const dialogList = [
-  { id: 1, name: "Super User" },
-  { id: 2, name: "User 2" },
-  { id: 3, name: "User 3" },
-  { id: 4, name: "User 4" },
-]
-
-const messageList = [
-  { id: 1, data: "Hello world." },
-  { id: 2, data: "What is going on? " },
-  { id: 3, data: "I'm so happy to see you!" }
-]
+import state from './redux/state';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App postMessages={postMessages} dialogList={dialogList} messageList={messageList} />
+      <App state={state} />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

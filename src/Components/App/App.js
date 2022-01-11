@@ -5,13 +5,9 @@ import { Home } from '../Home/Home';
 import { Profile } from '../Profile/Profile';
 import { Posts } from '../Post/Posts';
 import { Dialogs } from '../Dialogs/Dialogs';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 function App(props) {
-
-
-
-
   return (
     <div className="app-wrapper">
       <Header />
@@ -20,8 +16,8 @@ function App(props) {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/posts" element={<Posts postMessages={props.postMessages} />} />
-          <Route path="/dialogs/*" element={<Dialogs dialogList={props.dialogList} messageList={props.messageList} />} />
+          <Route path="/posts" element={<Posts postPage={props.state.postPage} />} />
+          <Route path="/dialogs/*" element={<Dialogs dialogPage={props.state.dialogPage} />} />
         </Routes>
       </main>
     </div>

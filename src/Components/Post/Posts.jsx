@@ -4,7 +4,7 @@ import { Messages } from "../Messages/Messages";
 export const Posts = (props) => {
     return (
         <div>
-            <Messages postMessages={props.postMessages} />
+            <Messages postMessages={props.postPage.postMessages} />
             <Post />
         </div>
     );

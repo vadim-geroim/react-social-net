@@ -4,8 +4,8 @@ import { Dialog } from './Dialog/Dialog';
 import { DMessage } from './DMessage/DMessage';
 
 export const Dialogs = (props) => {
-    const messageElements = props.messageList.map(m => <DMessage messageText={m.data} />);
-    const dialogElements = props.dialogList.map(d => <Dialog id={d.id} userName={d.name} />)
+    const messageElements = props.dialogPage.messageList.map(m => <DMessage messageText={m.data} />);
+    const dialogElements = props.dialogPage.dialogList.map(d => <Dialog id={d.id} userName={d.name} />)
 
     return (
         <div className={style.wrapper}>
