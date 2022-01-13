@@ -1,12 +1,41 @@
-let state = {
+type MessageType = {
+    id: Number;
+    data: String;
+}
+
+type DialogType = {
+    id: Number;
+    name: String;
+}
+
+type DialogPageType = {
+    messages: Array<MessageType>;
+    dialogs: Array<DialogType>;
+}
+
+type PostType = {
+    id: Number;
+    data: String;
+}
+
+type PostPageType = {
+    posts: Array<PostType>
+}
+
+type RootState = {
+    dialogPage: DialogPageType;
+    postPage: PostPageType;
+}
+
+let state: RootState = {
     dialogPage: {
-        messageList: [
-            { id: 1, data: "Hello world." },
+        messages: [
+            { id: 1, data: "Hello world!" },
             { id: 2, data: "What is going on? " },
             { id: 3, data: "I'm so happy to see you!" }
         ],
 
-        dialogList: [
+        dialogs: [
             { id: 1, name: "Super User" },
             { id: 2, name: "User 2" },
             { id: 3, name: "User 3" },
@@ -14,7 +43,7 @@ let state = {
         ]
     },
     postPage: {
-        postMessages: [
+        posts: [
             { id: 1, data: "Hello my friend!" },
             { id: 2, data: "What's going on?" },
             { id: 3, data: "How was your trip to Europe? " }

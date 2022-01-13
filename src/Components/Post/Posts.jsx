@@ -1,10 +1,12 @@
 import { Post } from "./Post";
 import { Messages } from "../Messages/Messages";
+import { PostPageType } from "../../redux/state";
 
-export const Posts = (props) => {
+
+export const Posts: React.FC<PostPageType> = (props) => {
     return (
         <div>
-            <Messages postMessages={props.postPage.postMessages} />
+            <Messages postMessages={props.postPage.posts} />
             <Post />
         </div>
     );
