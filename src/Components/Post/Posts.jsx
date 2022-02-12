@@ -7,7 +7,7 @@ export const Posts: React.FC<PostPageType> = (props) => {
     return (
         <div>
             <Messages postMessages={props.postPage.posts} />
-            <Post />
+            <Post addPost={props.addPost} />
         </div>
     );
 }

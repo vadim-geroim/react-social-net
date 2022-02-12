@@ -19,7 +19,8 @@ type PostType = {
 }
 
 type PostPageType = {
-    posts: Array<PostType>
+    posts: Array<PostType>;
+    addPost: (text: number) => void;
 }
 
 type RootState = {
@@ -49,6 +50,13 @@ let state: RootState = {
             { id: 3, data: "How was your trip to Europe? " }
         ]
     }
+}
+
+export let addPost = (text) => {
+    state.postPage.posts.push({
+        id: 4,
+        data: text
+    });
 }
 
 export default state;
