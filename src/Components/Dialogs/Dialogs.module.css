@@ -2,3 +2,30 @@
   display: grid;
   grid-template-columns: 100px 200px;
 }
+
+.textarea {
+  margin-top: 15px;
+  width: 500px;
+  height: 100px;
+}
+
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  width: 150px;
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  background-color: lightseagreen;
+}
+
+.btn:hover {
+  background-color: darkcyan;
+  text-decoration: none;
+}
