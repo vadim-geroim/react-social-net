@@ -1,3 +1,5 @@
+import renderDOM from '../render';
+
 type MessageType = {
     id: Number;
     data: String;
@@ -57,6 +59,7 @@ export let addPost = (text) => {
         id: 4,
         data: text
     });
+    renderDOM(state, addPost);
 }
 
 export default state;
