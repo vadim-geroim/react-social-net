@@ -1,4 +1,4 @@
-import renderDOM from '../render';
+let renderDOM;
 
 type MessageType = {
     id: Number;
@@ -23,6 +23,7 @@ type PostType = {
 type PostPageType = {
     posts: Array<PostType>;
     addPost: (text: number) => void;
+    textAreaValue: String;
 }
 
 type RootState = {
@@ -50,16 +51,27 @@ let state: RootState = {
             { id: 1, data: "Hello my friend!" },
             { id: 2, data: "What's going on?" },
             { id: 3, data: "How was your trip to Europe? " }
-        ]
+        ],
+        textAreaValue: "Please enter your post here"
     }
 }
 
-export let addPost = (text) => {
+export const changeTextAreaValue = (text) => {
+    state.postPage.textAreaValue = text;
+    renderDOM(state, addPost, changeTextAreaValue)
+}
+
+export const addPost = () => {
     state.postPage.posts.push({
         id: 4,
-        data: text
+        data: state.postPage.textAreaValue
     });
-    renderDOM(state, addPost);
+    state.postPage.textAreaValue = "";
+    renderDOM(state, addPost, changeTextAreaValue);
+}
+
+export let subscribe = (observer) => {
+    renderDOM = observer;
 }
 
 export default state;

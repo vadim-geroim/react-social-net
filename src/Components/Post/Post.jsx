@@ -5,14 +5,17 @@ export const Post = (props) => {
     const areaRef = React.createRef();
 
     const addPostHandler = () => {
-        props.addPost(areaRef.current.value)
-        areaRef.current.value = "";
+        props.addPost()
+    }
+
+    const OnChangeTextFieldHandler = () => {
+        props.changeTextAreaValue(areaRef.current.value);
     }
 
     return (
         <div className={style.posts}>
             <h2 className={style.title}>My posts</h2>
-            <textarea ref={areaRef} className={style.field}>
+            <textarea ref={areaRef} className={style.field} value={props.textAreaValue} onChange={OnChangeTextFieldHandler}>
             </textarea>
             <a className={style.btn} href="#" onClick={addPostHandler}>Send</a>
         </div>
