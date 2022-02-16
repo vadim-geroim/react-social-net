@@ -1,5 +1,3 @@
-let renderDOM;
-
 type MessageType = {
     id: Number;
     data: String;
@@ -31,47 +29,48 @@ type RootState = {
     postPage: PostPageType;
 }
 
-let state: RootState = {
-    dialogPage: {
-        messages: [
-            { id: 1, data: "Hello world!" },
-            { id: 2, data: "What is going on? " },
-            { id: 3, data: "I'm so happy to see you!" }
-        ],
+export let store = {
+    _state: {
+        dialogPage: {
+            messages: [
+                { id: 1, data: "Hello world!" },
+                { id: 2, data: "What is going on? " },
+                { id: 3, data: "I'm so happy to see you!" }
+            ],
 
-        dialogs: [
-            { id: 1, name: "Super User" },
-            { id: 2, name: "User 2" },
-            { id: 3, name: "User 3" },
-            { id: 4, name: "User 4" },
-        ]
+            dialogs: [
+                { id: 1, name: "Super User" },
+                { id: 2, name: "User 2" },
+                { id: 3, name: "User 3" },
+                { id: 4, name: "User 4" },
+            ]
+        },
+        postPage: {
+            posts: [
+                { id: 1, data: "Hello my friend!" },
+                { id: 2, data: "What's going on?" },
+                { id: 3, data: "How was your trip to Europe? " }
+            ],
+            textAreaValue: "Please enter your post here"
+        }
     },
-    postPage: {
-        posts: [
-            { id: 1, data: "Hello my friend!" },
-            { id: 2, data: "What's going on?" },
-            { id: 3, data: "How was your trip to Europe? " }
-        ],
-        textAreaValue: "Please enter your post here"
+    getState() {
+        return this._state;
+    },
+    _callSubscriber() { },
+    changeTextAreaValue(text) {
+        this._state.postPage.textAreaValue = text;
+        this._callSubscriber(this._state, this.addPost, this.changeTextAreaValue)
+    },
+    addPost() {
+        this._state.postPage.posts.push({
+            id: 4,
+            data: this._state.postPage.textAreaValue
+        });
+        this._state.postPage.textAreaValue = "";
+        this._callSubscriber(this._state, this.addPost, this.changeTextAreaValue);
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
     }
 }
-
-export const changeTextAreaValue = (text) => {
-    state.postPage.textAreaValue = text;
-    renderDOM(state, addPost, changeTextAreaValue)
-}
-
-export const addPost = () => {
-    state.postPage.posts.push({
-        id: 4,
-        data: state.postPage.textAreaValue
-    });
-    state.postPage.textAreaValue = "";
-    renderDOM(state, addPost, changeTextAreaValue);
-}
-
-export let subscribe = (observer) => {
-    renderDOM = observer;
-}
-
-export default state;
