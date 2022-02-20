@@ -5,16 +5,16 @@ export const Post = (props) => {
     const areaRef = React.createRef();
 
     const addPostHandler = () => {
-        props.addPost()
+        props.dispatch({ type: 'ADD-POST' });
     }
 
     const OnChangeTextFieldHandler = () => {
-        props.changeTextAreaValue(areaRef.current.value);
+        props.dispatch({ type: 'CHANGE-TEXT-AREA-VALUE', text: areaRef.current.value });
     }
 
     const OnFocusHandler = () => {
         if (props.textAreaValue === "Please enter your post here") {
-            props.changeTextAreaValue("");
+            props.dispatch({ type: 'CHANGE-TEXT-AREA-VALUE', text: "" })
         }
     }
 

@@ -58,11 +58,14 @@ export let store = {
         return this._state;
     },
     _callSubscriber() { },
-    changeTextAreaValue(text) {
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
+    _changeTextAreaValue(text) {
         this._state.postPage.textAreaValue = text;
         this._callSubscriber(this._state, this.addPost, this.changeTextAreaValue)
     },
-    addPost() {
+    _addPost() {
         this._state.postPage.posts.push({
             id: 4,
             data: this._state.postPage.textAreaValue
@@ -70,7 +73,13 @@ export let store = {
         this._state.postPage.textAreaValue = "";
         this._callSubscriber(this._state, this.addPost, this.changeTextAreaValue);
     },
-    subscribe(observer) {
-        this._callSubscriber = observer;
+
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            this._addPost();
+        } else if (action.type === 'CHANGE-TEXT-AREA-VALUE') {
+            this._changeTextAreaValue(action.text);
+        }
     }
+
 }

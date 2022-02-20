@@ -5,13 +5,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
 import './index.css';
-import App from './components/App/App';
+import App from './Components/App/App';
 
 let renderDOM = () => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={store.getState()} addPost={store.addPost.bind(store)} changeTextAreaValue={store.changeTextAreaValue.bind(store)} />
+        <App state={store.getState()} dispatch={store.dispatch.bind(store)} />
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
