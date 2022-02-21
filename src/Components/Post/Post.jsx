@@ -1,20 +1,21 @@
 import style from './Post.module.css';
 import React from 'react';
+import { addPostActionCreator, onChangeTextFieldActionCreator } from '../../redux/state';
 
 export const Post = (props) => {
     const areaRef = React.createRef();
 
     const addPostHandler = () => {
-        props.dispatch({ type: 'ADD-POST' });
+        props.dispatch(addPostActionCreator());
     }
 
     const OnChangeTextFieldHandler = () => {
-        props.dispatch({ type: 'CHANGE-TEXT-AREA-VALUE', text: areaRef.current.value });
+        props.dispatch(onChangeTextFieldActionCreator(areaRef.current.value));
     }
 
     const OnFocusHandler = () => {
         if (props.textAreaValue === "Please enter your post here") {
-            props.dispatch({ type: 'CHANGE-TEXT-AREA-VALUE', text: "" })
+            props.dispatch(onChangeTextFieldActionCreator(""))
         }
     }
 

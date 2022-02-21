@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD-POST';
+const CHANGE_TEXT_AREA_VALUE = 'CHANGE-TEXT-AREA-VALUE';
+
 type MessageType = {
     id: Number;
     data: String;
@@ -28,6 +31,9 @@ type RootState = {
     dialogPage: DialogPageType;
     postPage: PostPageType;
 }
+
+export const addPostActionCreator = () => ({ type: ADD_POST });
+export const onChangeTextFieldActionCreator = (textVal) => ({ type: CHANGE_TEXT_AREA_VALUE, text: textVal });
 
 export let store = {
     _state: {
