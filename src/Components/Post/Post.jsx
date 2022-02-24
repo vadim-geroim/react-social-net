@@ -1,6 +1,6 @@
 import style from './Post.module.css';
 import React from 'react';
-import { addPostActionCreator, onChangeTextFieldActionCreator } from '../../redux/state';
+import { addPostActionCreator, onChangeTextFieldActionCreator } from '../../redux/postPageReducer';
 
 export const Post = (props) => {
     const areaRef = React.createRef();

@@ -2,7 +2,7 @@ import style from './Dialogs.module.css';
 import React from 'react';
 import { Dialog } from './Dialog/Dialog';
 import { DMessage } from './DMessage/DMessage';
-import { onChangeNewMessageCreator, addNewMessageCreator } from '../../redux/state';
+import { onChangeNewMessageCreator, addNewMessageCreator } from '../../redux/dialogPageReducer';
 
 export const Dialogs = (props) => {
     const messageElements = props.dialogPage.messages.map(m => <DMessage key={m.id} messageText={m.data} />);
