@@ -8,6 +8,7 @@ import { Dialogs } from '../Dialogs/Dialogs';
 import { Routes, Route } from 'react-router-dom';
 
 function App(props) {
+
   return (
     <div className="app-wrapper">
       <Header />

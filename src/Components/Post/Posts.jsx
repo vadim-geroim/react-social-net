@@ -1,6 +1,6 @@
 import { Post } from "./Post";
 import { Messages } from "../Messages/Messages";
-import { PostPageType } from "../../redux/state";
+import { PostPageType } from "../../redux/store";
 
 
 export const Posts: React.FC<PostPageType> = (props) => {
