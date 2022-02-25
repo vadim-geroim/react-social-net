@@ -2,7 +2,6 @@ import style from './Dialogs.module.css';
 import React from 'react';
 import { Dialog } from './Dialog/Dialog';
 import { DMessage } from './DMessage/DMessage';
-import { onChangeNewMessageCreator, addNewMessageCreator } from '../../redux/dialogPageReducer';
 
 export const Dialogs = (props) => {
     const messageElements = props.dialogPage.messages.map(m => <DMessage key={m.id} messageText={m.data} />);
@@ -10,17 +9,15 @@ export const Dialogs = (props) => {
     const areaRef = React.createRef();
 
     const onClickHandler = () => {
-        props.dispatch(addNewMessageCreator());
+        props.onClickHandler();
     }
 
     const onChangeHandler = () => {
-        props.dispatch(onChangeNewMessageCreator(areaRef.current.value));
+        props.onChangeHandler(areaRef.current.value);
     }
 
     const onFocusHandler = () => {
-        if (props.dialogPage.newMessageValue === "Please enter your message") {
-            props.dispatch(onChangeNewMessageCreator(""));
-        }
+        props.onFocusHandler();
     }
 
     return (

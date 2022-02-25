@@ -4,7 +4,7 @@ import { Navbar } from '../Navbar/Navbar';
 import { Home } from '../Home/Home';
 import { Profile } from '../Profile/Profile';
 import { Posts } from '../Post/Posts';
-import { Dialogs } from '../Dialogs/Dialogs';
+import { DialogsContainer } from '../Dialogs/DialogsContainer';
 import { Routes, Route } from 'react-router-dom';
 
 function App(props) {
@@ -18,7 +18,7 @@ function App(props) {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/posts" element={<Posts postPage={props.state.postPage} dispatch={props.dispatch} />} />
-          <Route path="/dialogs/*" element={<Dialogs dialogPage={props.state.dialogPage} dispatch={props.dispatch} />} />
+          <Route path="/dialogs/*" element={<DialogsContainer store={props.store} />} />
         </Routes>
       </main>
     </div>
