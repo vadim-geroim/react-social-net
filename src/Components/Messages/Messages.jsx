@@ -3,8 +3,9 @@ import { Message } from './Message/Message';
 import { Post } from '../Post/Post';
 
 export const Messages = (props) => {
-
-    const messageElements = props.postMessages.map(m => <Message key={m.id} text={m.data} />)
+    let state = props.store.getState();
+    let messages = state.postPage.posts;
+    const messageElements = messages.map(m => <Message key={m.id} text={m.data} />)
 
     return (
         <div className={style.message}>

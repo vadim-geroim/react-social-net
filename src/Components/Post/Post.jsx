@@ -1,22 +1,19 @@
 import style from './Post.module.css';
 import React from 'react';
-import { addPostActionCreator, onChangeTextFieldActionCreator } from '../../redux/postPageReducer';
 
 export const Post = (props) => {
     const areaRef = React.createRef();
 
     const addPostHandler = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPostHandler();
     }
 
-    const OnChangeTextFieldHandler = () => {
-        props.dispatch(onChangeTextFieldActionCreator(areaRef.current.value));
+    const onChangeTextFieldHandler = () => {
+        props.onChangeTextFieldHandler(areaRef.current.value);
     }
 
-    const OnFocusHandler = () => {
-        if (props.textAreaValue === "Please enter your post here") {
-            props.dispatch(onChangeTextFieldActionCreator(""))
-        }
+    const onFocusHandler = () => {
+        props.onFocusHandler();
     }
 
     return (
@@ -25,8 +22,8 @@ export const Post = (props) => {
             <textarea ref={areaRef}
                 className={style.field}
                 value={props.textAreaValue}
-                onChange={OnChangeTextFieldHandler}
-                onFocus={OnFocusHandler}>
+                onChange={onChangeTextFieldHandler}
+                onFocus={onFocusHandler}>
             </textarea>
             <a className={style.btn} href="#" onClick={addPostHandler}>Send</a>
         </div>
