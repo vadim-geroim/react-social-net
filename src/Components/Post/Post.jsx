@@ -13,7 +13,7 @@ export const Post = (props) => {
     }
 
     const onFocusHandler = () => {
-        props.onFocusHandler();
+        props.onFocusHandler(props.textAreaValue);
     }
 
     return (

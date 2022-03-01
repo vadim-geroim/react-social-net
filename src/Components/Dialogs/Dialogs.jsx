@@ -17,7 +17,7 @@ export const Dialogs = (props) => {
     }
 
     const onFocusHandler = () => {
-        props.onFocusHandler();
+        props.onFocusHandler(props.dialogPage.newMessageValue);
     }
 
     return (

@@ -4,6 +4,7 @@ import { store } from './redux/reduxStore';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './Components/App/App';
 
@@ -11,7 +12,9 @@ let renderDOM = (state) => {
   ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

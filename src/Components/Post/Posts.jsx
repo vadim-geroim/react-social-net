@@ -1,11 +1,11 @@
 import { PostContainer } from "./PostContainer";
-import { Messages } from "../Messages/Messages";
+import { MessagesContainer } from "../Messages/MessagesContainer";
 
 
 export const Posts = (props) => {
     return (
         <div>
-            <Messages store={props.store} />
+            <MessagesContainer store={props.store} />
             <PostContainer store={props.store} />
         </div>
     );
