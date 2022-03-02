@@ -11,20 +11,18 @@ let initialState = {
 }
 
 export const postPageReducer = (state = initialState, action) => {
-    let newState = { ...state };
-    newState.posts = [...newState.posts];
-
     switch (action.type) {
         case ADD_POST:
-            newState.posts.push({
-                id: 4,
-                data: newState.textAreaValue
-            });
-            newState.textAreaValue = "";
-            return newState;
+            return {
+                ...state,
+                textAreaValue: "",
+                posts: [...state.posts, { id: 4, data: state.textAreaValue }]
+            };
         case CHANGE_TEXT_AREA_VALUE:
-            newState.textAreaValue = action.text;
-            return newState;
+            return {
+                ...state,
+                textAreaValue: action.text
+            };
         default:
             return state;
     }
