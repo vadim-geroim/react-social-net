@@ -7,5 +7,7 @@ let reducers = combineReducers({
     postPage: postPageReducer
 });
 
-export let store = createStore(reducers);
+let store = createStore(reducers);
+window.store = store;
 
+export { store };
